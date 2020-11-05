@@ -1,0 +1,22 @@
+{
+  "name": "my-bucket-api",
+  "version": "1.0.0",
+  "description": "The bucket API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/thanhj/my-pocket-api.git"
+  },
+  "keywords": [
+    "Pocket"
+  ],
+  "author": "Thanh Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhj/my-pocket-api/issues"
+  },
+  "homepage": "https://github.com/thanhj/my-pocket-api#readme"
+}
