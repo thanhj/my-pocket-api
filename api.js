@@ -1,48 +1,44 @@
 'use strict'
 
-const Api = require('claudia-api-builder')
-const getPizzas = require('./handlers/get-pizzas')
-const createOrder = require('./handlers/create-order')
-const updateOrder = require('./handlers/update-order')
-const deleteOrder = require('./handlers/delete-order')
+const Api = require("claudia-api-builder")
+const getAssets = require("./handlers/get-assets")
+const createAsset = require("./handlers/create-asset")
+const updateAsset = require("./handlers/update-asset")
+const deleteAsset = require("./handlers/delete-asset")
 
 const api = new Api()
 
 api.get('/', () => 'Welcome to Pizza API')
 
-api.get('/pizzas', () => {
-  return getPizzas()
+api.get('/assets', () => {
+  return getAssets()
 })
 
-api.get('/pizzas/{id}', (request) => {
-    return getPizzas(request.pathParams.id)
+api.get('/assets/{id}', (request) => {
+    return getAssets(request.pathParams.id)
 }, {
     error: 404
 })
 
-api.put('/orders/{id}', (request) => {
-    return updateOrder(request.pathParams.id, request.body)
+api.put('/assets/{id}', (request) => {
+    return updateAsset(request.pathParams.id, request.body)
 }, {
     success: 200,
     error: 400
 })
 
-api.delete('/orders/{id}', (request) => {
-    return deleteOrder(request.pathParams.id)
+api.delete('/assets/{id}', (request) => {
+    return deleteAsset(request.pathParams.id)
 }, {
     success: 204,
     error: 400
 })
 
-api.post('/orders', (request) => {
-    return createOrder(request.body)
+api.post('/assets', (request) => {
+    return createAsset(request.body)
 }, {
     success: 201,
     error: 400
-})
-
-api.get('/hello', () => {
-    return 'Hello Pizza!!'
 })
 
 module.exports = api
