@@ -1,5 +1,6 @@
 const AWS = require('aws-sdk')
 const docClient = new AWS.DynamoDB.DocumentClient()
+const uuid = require('uuid')
 
 const createAsset = (request) => {
     if (!request || !request.name || !request.metadata)
@@ -8,7 +9,7 @@ const createAsset = (request) => {
     return docClient.put({
         TableName: 'pocket-assets',
         Item: {
-            assetId: 'some-id',
+            assetId: uuid.v4(),
             name: request.name,
             description: request.description,
             metadata: request.metadata

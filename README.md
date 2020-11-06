@@ -44,7 +44,7 @@ aws dynamodb create-table --table-name pocket-assets \
 arn:aws:dynamodb:eu-central-1:827726978788:table/pocket-assets
 
 aws dynamodb scan \
-  --table-name pizza-orders \
+  --table-name pocket-assets \
   --region eu-central-1 \
   --output json
 ```
