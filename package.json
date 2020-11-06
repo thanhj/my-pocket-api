@@ -1,5 +1,5 @@
 {
-  "name": "my-bucket-api",
+  "name": "my-pocket-api",
   "version": "1.0.0",
   "description": "The bucket API",
   "main": "app.js",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/thanhj/my-pocket-api#readme",
   "dependencies": {
+    "aws-sdk": "^2.787.0",
     "claudia-api-builder": "^4.1.2"
   }
 }

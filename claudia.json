@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "my-pocket-api-executor",
+    "name": "my-pocket-api",
+    "region": "eu-central-1"
+  },
+  "api": {
+    "id": "q5svg15qs0",
+    "module": "api"
+  }
+}
