@@ -22,9 +22,6 @@ api.get('/assets/{id}', (request) => {
 
 api.put('/assets/{id}', (request) => {
     return updateAsset(request.pathParams.id, request.body)
-}, {
-    success: 200,
-    error: 400
 })
 
 api.delete('/assets/{id}', (request) => {

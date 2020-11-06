@@ -1,17 +1,23 @@
-const assets = require('../data/assets.json')
+'use strict'
+
+const AWS = require('aws-sdk')
+const docClient = new AWS.DynamoDB.DocumentClient()
 
 const getAssets = assetId => {
-    if (!assetId)
-        return assets
+    if (typeof assetId === 'undefined'){
+        return docClient.scan({
+            TableName: 'pocket-assets'
+        }).promise()
+            .then(result => result.Items)
+    }
 
-    const asset = assets.find((asset) => {
-        return asset.id == assetId
-    })
-
-    if (asset)
-        return asset
-
-    throw new Error('The asset you requested was not found')
+    return docClient.get({
+        TableName: 'pocket-assets',
+        Key: {
+            assetId: assetId
+        }
+    }).promise()
+        .then(result => result.Item)
 };
 
 module.exports = getAssets

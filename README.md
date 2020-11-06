@@ -16,6 +16,11 @@ claudia create \
 ```
 curl -i \
   -H "Content-Type: application/json" \
+  -X GET \
+  https://q5svg15qs0.execute-api.eu-central-1.amazonaws.com/latest/assets
+
+curl -i \
+  -H "Content-Type: application/json" \
   -X POST \
   -d '{"name":"Dalat Land","description":"","metadata":[{"name":"location","value":"Dalat, Vietnam"},{"name":"category","value":"real estate"}]}' \
   https://q5svg15qs0.execute-api.eu-central-1.amazonaws.com/latest/assets
@@ -23,8 +28,8 @@ curl -i \
 curl -i \
   -H "Content-Type: application/json" \
   -X PUT \
-  -d '{"pizzaId":2,"address":"221 Baker Street"}' \
-  https://q5svg15qs0.execute-api.eu-central-1.amazonaws.com/latest/assets/1
+  -d '{"name":"Dalat Land","description":"ABC","metadata":[{"name":"location","value":"Dalat 123, Vietnam"},{"name":"category","value":"real estate"}]}' \
+  https://q5svg15qs0.execute-api.eu-central-1.amazonaws.com/latest/assets/some-id
 
 curl -i \
   -H "Content-Type: application/json" \
